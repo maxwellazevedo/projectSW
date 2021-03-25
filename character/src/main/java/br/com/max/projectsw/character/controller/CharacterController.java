@@ -1,7 +1,7 @@
 package br.com.max.projectsw.character.controller;
 
-import br.com.max.projectsw.character.request.CharacterRequest;
-import br.com.max.projectsw.character.response.CharacterResponse;
+import br.com.max.projectsw.character.domain.request.CharacterRequest;
+import br.com.max.projectsw.character.domain.response.CharacterResponse;
 import br.com.max.projectsw.character.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

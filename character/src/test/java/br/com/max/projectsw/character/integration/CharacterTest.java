@@ -1,6 +1,6 @@
 package br.com.max.projectsw.character.integration;
 
-import br.com.max.projectsw.character.request.CharacterRequest;
+import br.com.max.projectsw.character.domain.request.CharacterRequest;
 import br.com.max.projectsw.character.service.CharacterService;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package br.com.max.projectsw.character.request;
+package br.com.max.projectsw.character.domain.request;
 
 import lombok.*;
 
