@@ -1,9 +1,11 @@
 package br.com.max.projectsw.character.service;
 
+import br.com.max.projectsw.character.client.StarWarsClient;
 import br.com.max.projectsw.character.dao.CharacterDAO;
 import br.com.max.projectsw.character.domain.entity.CharacterEntity;
 import br.com.max.projectsw.character.domain.request.CharacterRequest;
 import br.com.max.projectsw.character.domain.response.CharacterResponse;
+import br.com.max.projectsw.character.domain.response.PersonResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ import java.util.stream.Collectors;
 public class CharacterService {
 
     private CharacterDAO characterDAO;
+
+    private StarWarsClient starWarsClient;
 
     public List<CharacterResponse> findAll(){
         final List<CharacterEntity> characterList = characterDAO.findAll();
@@ -44,6 +48,7 @@ public class CharacterService {
                 .age(characterRequest.getAge())
                 .planet(characterRequest.getPlanet())
                 .specie(characterRequest.getSpecie())
+                .masterId(characterRequest.getMasterId())
                 .build();
 
         characterDAO.save(characterEntity);
@@ -56,7 +61,12 @@ public class CharacterService {
                 .age(character.getAge())
                 .planet(character.getPlanet())
                 .specie(character.getSpecie())
+                .master(findPerson(character.getMasterId()))
                 .build();
 
+    }
+
+    private PersonResponse findPerson (final Integer masterId){
+        return starWarsClient.findPersonById(masterId);
     }
 }

@@ -5,3 +5,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/character_db
     username: postgres
     password: postgres
+
+feign:
+  url:
+    starwars: https://swapi.dev/api

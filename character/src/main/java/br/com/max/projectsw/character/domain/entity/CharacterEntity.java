@@ -27,4 +27,6 @@ public class CharacterEntity {
     @CreationTimestamp
     @Column(name="date_creation")
     private LocalDateTime creationDate;
+    @Column(name="master_id")
+    private Integer masterId;
 }

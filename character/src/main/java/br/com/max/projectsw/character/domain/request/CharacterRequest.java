@@ -14,5 +14,6 @@ public class CharacterRequest {
     private Long specie;
     private Integer age;
     private Long planet;
+    private Integer masterId;
 
 }

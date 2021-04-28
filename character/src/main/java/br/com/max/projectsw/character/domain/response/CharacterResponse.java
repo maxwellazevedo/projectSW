@@ -14,4 +14,6 @@ public class CharacterResponse {
     private Long specie;
     private Integer age;
     private Long planet;
+    private PersonResponse master;
+
 }
