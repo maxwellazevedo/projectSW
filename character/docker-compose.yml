@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mwallet-db:
+    image: postgres:9.6
+    container_name: "postgres-character"
+    restart: always
+    environment:
+      - POSTGRES_DB=character_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+
+    ports:
+      - 5432:5432

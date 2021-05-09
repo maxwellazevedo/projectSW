@@ -5,11 +5,12 @@ import br.com.max.projectsw.character.service.CharacterService;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
 import static io.restassured.RestAssured.given;
 
-
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CharacterTest {
 
     @Autowired
@@ -60,6 +61,6 @@ public class CharacterTest {
     }
 
     private CharacterRequest characterBuild() {
-        return new CharacterRequest("Adebayor", 5L, 114, 5L);
+        return new CharacterRequest("Adebayor", 5L, 114, 5L, 2);
     }
 }
